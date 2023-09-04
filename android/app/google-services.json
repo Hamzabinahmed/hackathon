@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "605763614155",
+    "project_id": "hackathon-a6fe2",
+    "storage_bucket": "hackathon-a6fe2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605763614155:android:d7a67e73c4c24f3475724e",
+        "android_client_info": {
+          "package_name": "com.example.hackathon_assign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605763614155-ak1kv42gf3o8keoi4ov7udln9gge0ipi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc_jE2fRmdHqgkm7XkhbSrDFZHYir9yjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605763614155-ak1kv42gf3o8keoi4ov7udln9gge0ipi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "605763614155-c25pa3b20k3ciqn97urck42gnl5ribgv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hackathonAssign.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
