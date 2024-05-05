@@ -17,10 +17,14 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailControl = TextEditingController();
   TextEditingController passControl = TextEditingController();
-  bool passwordVisible = true;
+
+  bool isLoading = false;
 
   login(context) async {
     try {
+      setState(() {
+        isLoading = true;
+      });
       await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: emailControl.text, password: passControl.text);
       Navigator.pushReplacement(context,
@@ -28,6 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
       } else if (e.code == 'wrong-password') {}
+    } finally {
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 
@@ -84,7 +92,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   MyTextField(
                     controller: emailControl,
                     hintText: "Enter your email",
-                    // obscureText: false,
                     icon: const Icon(
                       Icons.email,
                       size: 20,
@@ -97,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   MyTextField(
                     controller: passControl,
                     hintText: "Enter your password",
-                    // obscureText: password,
+                    obscureText: true,
                     icon: const Icon(
                       Icons.visibility,
                       size: 20,
@@ -122,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20),
                   // Sign in button
                   MyButton(
-                    text: "Sign in",
+                    text: isLoading ? "Loading ..." : "Sign In",
                     height: 50,
                     fontsize: 20,
                     onpress: () {
@@ -132,7 +139,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   const SizedBox(height: 20),
                   // or Signin with
                   const Center(
-                    child: Text("SignIn with"),
+                    child: Text(
+                      "Signin with",
+                      style: TextStyle(color: Colors.grey, fontSize: 15),
+                    ),
                   ),
                   const SizedBox(
                     height: 30,

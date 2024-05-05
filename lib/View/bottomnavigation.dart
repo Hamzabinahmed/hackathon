@@ -45,7 +45,7 @@ class _MainPageState extends State<BottomNavigation> {
                 minWidth: 60,
                 onPressed: () {
                   setState(() {
-                    currentScreen = FileScreen();
+                    currentScreen = const FileScreen();
                     activeTab = 1;
                   });
                 },

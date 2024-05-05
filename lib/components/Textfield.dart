@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 class MyTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
-  // final bool obscureText;
   final Icon? icon;
   final int? maxlength;
   final Icon? prefix;
-
+  final bool obscureText;
   const MyTextField({
     super.key,
     this.prefix,
+    this.obscureText = false,
     required this.controller,
     required this.hintText,
-    // required this.obscureText,
     this.icon,
     this.maxlength,
   });
@@ -26,7 +25,7 @@ class MyTextField extends StatelessWidget {
       child: TextField(
         maxLength: maxlength,
         controller: controller,
-        // obscureText: obscureText,
+        obscureText: obscureText,
         decoration: InputDecoration(
           suffixIcon: icon,
           prefixIcon: prefix,

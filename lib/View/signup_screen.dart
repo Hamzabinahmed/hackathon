@@ -16,7 +16,13 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   TextEditingController semailControl = TextEditingController();
   TextEditingController spassControl = TextEditingController();
+  bool _obscureText = true;
 
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
   signup(context) async {
     try {
       final credential =
@@ -119,7 +125,6 @@ class _SignupScreenState extends State<SignupScreen> {
                 MyTextField(
                   controller: semailControl,
                   hintText: "Enter your mail",
-                  // obscureText: false,
                   icon: const Icon(
                     Icons.email,
                     size: 20,
@@ -131,7 +136,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 MyTextField(
                   controller: spassControl,
                   hintText: "Enter your password",
-                  // obscureText: password,
+                  obscureText: true,
                   icon: const Icon(
                     Icons.visibility,
                     size: 20,
@@ -153,7 +158,13 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(height: 20),
                 // or Signin with
                 const Center(
-                  child: Text("Sign Up with"),
+                  child: Text(
+                    "Sign Up with",
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 15,
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
