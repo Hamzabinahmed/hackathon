@@ -80,9 +80,10 @@ class _SplashScreenState extends State<SplashScreen> {
                         fontsize: 20,
                         onpress: () {
                           Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => CarouselSlider()));
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CarouselSlider()),
+                          );
                         },
                       ),
                     ),

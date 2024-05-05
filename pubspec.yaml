@@ -38,7 +38,10 @@ dependencies:
   firebase_core: ^2.15.1
   firebase_auth: ^4.9.0
   cloud_firestore: ^4.9.1
-  get: ^4.6.5
+  intro_slider: ^4.2.1
+  flutter_image_stack: ^0.0.7
+  percent_indicator: ^4.2.3
+
  
 
 dev_dependencies:

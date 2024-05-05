@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color Htextcolor = Color.fromARGB(255, 36, 19, 105);
+  static Color Htextcolor = Color(0xff1a0e4a);
 }

@@ -1,15 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hackathon_assign/View/add_task/task_screen.dart';
 // import 'package:hackathon_assign/View/SliderScreen/page1.dart';
 // import 'package:hackathon_assign/View/SliderScreen/page2.dart';
 // import 'package:hackathon_assign/View/SliderScreen/page3.dart';
-import 'package:hackathon_assign/View/bottomnavigation.dart';
-import 'package:hackathon_assign/View/chat_screen.dart';
-import 'package:hackathon_assign/View/home_Screen.dart';
-// import 'package:hackathon_assign/View/login_screen.dart';
-// import 'package:hackathon_assign/View/signup_screen.dart';
+import 'package:hackathon_assign/View/file_screen.dart';
 import 'package:hackathon_assign/View/splashScreen.dart';
+// import 'package:hackathon_assign/View/login_screen.dart';
 import 'package:hackathon_assign/firebase_options.dart';
 
 void main() async {
@@ -20,7 +16,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,9 +40,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const SplashScreen(),
+      // home: FileScreen(),
+      // home: const ProfileScreen(),
       // home: ChatScreen(),
       // home: HomeScreen(),
-      // home: BottomNavigation()
+      // home: BottomNavigation(),
       // home: const TaskScreen(),
       // home: const LoginScreen(),
       // home: SignupScreen(),

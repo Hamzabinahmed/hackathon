@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:hackathon_assign/View/login_screen.dart';
 import 'package:hackathon_assign/components/Textfield.dart';
 import 'package:hackathon_assign/components/btn.dart';
 import 'package:hackathon_assign/components/square_tile.dart';
@@ -37,41 +39,53 @@ class _SignupScreenState extends State<SignupScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        // systemOverlayStyle: const SystemUiOverlayStyle(
+        //   statusBarColor: Colors.white, // Status Bar Color
+        //   statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        //   statusBarBrightness: Brightness.light, // For iOS (dark icons)
+        // ),
+
+        toolbarHeight: 70,
+        elevation: 0,
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          toolbarHeight: 50,
-          elevation: 0,
-          backgroundColor: Colors.white,
-          foregroundColor: const Color(0xff1a0e4a),
-          leading: IconButton(
+        foregroundColor: const Color(0xff1a0e4a),
+        leading: Padding(
+          padding: const EdgeInsets.only(top: 28.0),
+          child: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(Icons.arrow_back_ios_outlined),
           ),
-          title: Text(
+        ),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 28.0),
+          child: Text(
             "Sign Up",
             style: Theme.of(context).textTheme.displayLarge,
           ),
-          centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: SizedBox(
-            // height: MediaQuery.of(context).size.height,
-            height: double.infinity,
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: SizedBox(
+          // height: MediaQuery.of(context).size.height,
+          height: double.infinity,
+          child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const SizedBox(height: 10),
+                const SizedBox(height: 40),
                 const Text(
                   "Create Account",
                   style: TextStyle(color: Color(0xff1a0e4a), fontSize: 30),
                 ),
-                // SizedBox(height: 10),
+                const SizedBox(height: 10),
                 SizedBox(
                   width: 240,
                   child: Text(
@@ -80,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     style: Theme.of(context).textTheme.displaySmall,
                   ),
                 ),
-                // SizedBox(height: 20),
+                const SizedBox(height: 30),
                 // MyTextField(
                 //   controller: emailControl,
                 //   hintText: "Enter your username",
@@ -90,6 +104,18 @@ class _SignupScreenState extends State<SignupScreen> {
                 //     size: 20,
                 //   ),
                 // ),
+                // MyTextField(
+                //   controller: semailControl,
+                //   hintText: "Enter your username",
+                //   // obscureText: false,
+                //   icon: const Icon(
+                //     Icons.verified_user_rounded,
+                //     size: 20,
+                //   ),
+                // ),
+                const SizedBox(
+                  height: 20,
+                ),
                 MyTextField(
                   controller: semailControl,
                   hintText: "Enter your mail",
@@ -99,10 +125,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     size: 20,
                   ),
                 ),
-
-                // const SizedBox(
-                //   height: 20,
-                // ),
+                const SizedBox(
+                  height: 20,
+                ),
                 MyTextField(
                   controller: spassControl,
                   hintText: "Enter your password",
@@ -115,7 +140,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                 // forgot password
 
-                // SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // Sign in button
                 MyButton(
                   text: "Sign Up",
@@ -125,14 +150,14 @@ class _SignupScreenState extends State<SignupScreen> {
                     signup(context);
                   },
                 ),
-                // SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // or Signin with
                 const Center(
-                  child: Text("Signup with"),
+                  child: Text("Sign Up with"),
                 ),
-                // const SizedBox(
-                //   height: 20,
-                // ),
+                const SizedBox(
+                  height: 20,
+                ),
                 // google + Apple button
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -151,6 +176,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 15),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -164,15 +190,15 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     TextButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => const SignUpScreen(),
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
                       },
                       child: const Text(
-                        'Sing Un',
+                        'Sing In',
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.bold),
                       ),

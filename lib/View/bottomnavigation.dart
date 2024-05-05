@@ -24,7 +24,7 @@ class _MainPageState extends State<BottomNavigation> {
         elevation: 0,
         child: Container(
           color: Colors.white,
-          height: 60,
+          height: 50,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -45,7 +45,7 @@ class _MainPageState extends State<BottomNavigation> {
                 minWidth: 60,
                 onPressed: () {
                   setState(() {
-                    currentScreen = const FileScreen();
+                    currentScreen = FileScreen();
                     activeTab = 1;
                   });
                 },
@@ -54,103 +54,102 @@ class _MainPageState extends State<BottomNavigation> {
                   color: activeTab == 1 ? const Color(0xff756EF3) : Colors.grey,
                 ),
               ),
-              CircleAvatar(
-                radius: 20,
-                backgroundColor: const Color(0xff756EF3),
-                child: MaterialButton(
-                  onPressed: () {
-                    showModalBottomSheet(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(
-                          top: Radius.circular(25),
-                        ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                  backgroundColor: const Color(0xff756EF3),
+                ),
+                onPressed: () {
+                  showModalBottomSheet(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(25),
                       ),
-                      context: context,
-                      builder: (BuildContext context) {
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 10.0),
-                          child: SizedBox(
-                            height: 400,
-                            child: Center(
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: <Widget>[
-                                  BottomSheetCard(
-                                    text: "Create Task",
-                                    icon: Icons.edit_outlined,
-                                    ontap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const TaskScreen(),
-                                        ),
-                                      );
-                                    },
+                    ),
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10.0),
+                        child: SizedBox(
+                          height: 400,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: <Widget>[
+                                BottomSheetCard(
+                                  text: "Create Task",
+                                  icon: Icons.edit_outlined,
+                                  ontap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TaskScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                BottomSheetCard(
+                                  text: "Create Project",
+                                  icon: Icons.add_box_outlined,
+                                  ontap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TaskScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                BottomSheetCard(
+                                  text: "Create Team",
+                                  icon: Icons.group_outlined,
+                                  ontap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TaskScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                BottomSheetCard(
+                                  text: "Create Event",
+                                  icon: Icons.timelapse_outlined,
+                                  ontap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const TaskScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  icon: Icon(
+                                    Icons.cancel_rounded,
+                                    size: 40,
+                                    color: AppColors.Htextcolor,
                                   ),
-                                  BottomSheetCard(
-                                    text: "Create Project",
-                                    icon: Icons.add_box_outlined,
-                                    ontap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const TaskScreen(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  BottomSheetCard(
-                                    text: "Create Team",
-                                    icon: Icons.group_outlined,
-                                    ontap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const TaskScreen(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  BottomSheetCard(
-                                    text: "Create Event",
-                                    icon: Icons.timelapse_outlined,
-                                    ontap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) =>
-                                              const TaskScreen(),
-                                        ),
-                                      );
-                                    },
-                                  ),
-                                  IconButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: Icon(
-                                      Icons.cancel_rounded,
-                                      size: 40,
-                                      color: AppColors.Htextcolor,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
-                        );
-                      },
-                    );
-                  },
-                  child: const Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: const Icon(
+                  Icons.add,
+                  color: Colors.white,
                 ),
               ),
               MaterialButton(

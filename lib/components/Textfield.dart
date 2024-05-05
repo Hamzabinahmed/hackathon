@@ -6,9 +6,11 @@ class MyTextField extends StatelessWidget {
   // final bool obscureText;
   final Icon? icon;
   final int? maxlength;
+  final Icon? prefix;
 
   const MyTextField({
     super.key,
+    this.prefix,
     required this.controller,
     required this.hintText,
     // required this.obscureText,
@@ -27,6 +29,7 @@ class MyTextField extends StatelessWidget {
         // obscureText: obscureText,
         decoration: InputDecoration(
           suffixIcon: icon,
+          prefixIcon: prefix,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.shade300),
             borderRadius: BorderRadius.circular(8),

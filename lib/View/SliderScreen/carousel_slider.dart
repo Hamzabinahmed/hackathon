@@ -6,16 +6,12 @@ import 'package:hackathon_assign/View/SliderScreen/page3.dart';
 class CarouselSlider extends StatelessWidget {
   const CarouselSlider({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        scrollDirection: Axis.horizontal,
-        children: const [
-          Page1(),
-          Page2(),
-          Page3(),
-        ],
+      body: Container(
+        child: Page3(),
       ),
     );
   }

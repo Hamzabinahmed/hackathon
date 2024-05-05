@@ -52,7 +52,7 @@ class TaskContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: Colors.yellow),
         borderRadius: BorderRadius.circular(10),
       ),
       height: 40,
